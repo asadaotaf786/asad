@@ -5,7 +5,10 @@ const path = require('path');
 const WebSocket = require('ws'); // Move the WebSocket import here
 const util = require('util');
 
-
+// Define routes and middleware
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'whatsapp.html'));
+});
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
